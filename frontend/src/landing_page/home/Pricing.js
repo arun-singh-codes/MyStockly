@@ -16,7 +16,7 @@ function Pricing() {
             </p>
           </div>
           <div>
-            <a className="pt-button">
+            <a href="#" className="pt-button">
               See pricing <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>

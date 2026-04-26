@@ -24,7 +24,7 @@ export default function Login({ handleForm }) {
         .post("http://localhost:2000/auth/login", formData)
         .then((res) => {
           console.log(res);
-          if (res.data.success == true) {
+          if (res.data.success === true) {
             window.location.href = "http://localhost:3005/?msg=login-success";
             localStorage.setItem("token", res.data.token); // optional // or wherever
           } else {
@@ -83,7 +83,7 @@ export default function Login({ handleForm }) {
       >
         <p className="smalltext">
           Create an Account?{" "}
-          <a
+          <a href="#"
             style={{
               color: "blue",
               textDecoration: "underline",
