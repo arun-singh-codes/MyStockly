@@ -12,7 +12,7 @@ const Holdings = () => {
       // console.log(res.data);
       setAllHoldings(res.data);
     });
-  }, []);
+  }, [backend_url]);
 
   // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   const labels = allHoldings.map((subArray) => subArray["name"]);

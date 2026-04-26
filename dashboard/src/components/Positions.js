@@ -16,7 +16,7 @@ const Positions = () => {
       console.log(err);
     })
 
-  } , [])
+  } , [backend_url])
 
   return (
     <>
