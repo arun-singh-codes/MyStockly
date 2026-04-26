@@ -1,49 +1,58 @@
 import TextField from "@mui/material/TextField";
-import { useState } from "react";
 import Button from "@mui/material/Button";
+import { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 export default function Login({ handleForm }) {
-  let [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-  let handleOnChange = (event) => {
-    setFormData((prevData) => ({
-      ...prevData,
+
+  const [loading, setLoading] = useState(false);
+
+  const handleOnChange = (event) => {
+    setFormData((prev) => ({
+      ...prev,
       [event.target.name]: event.target.value,
     }));
   };
 
-  let handleFormSubmit = async (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     try {
-      const response = await axios
-        .post("http://localhost:2000/auth/login", formData)
-        .then((res) => {
-          console.log(res);
-          if (res.data.success === true) {
-            window.location.href = "http://localhost:3005/?msg=login-success";
-            localStorage.setItem("token", res.data.token); // optional // or wherever
-          } else {
-            toast.error(res.data.message || "Invalid Email or Password");
-          }
-        })
-        .catch((err) => console.error(err));
+      const res = await axios.post(
+        "http://localhost:2000/auth/login",
+        formData
+      );
 
-      
-      console.log("Server Response:", response.data);
-      setFormData({
-        email: "",
-        password: "",
-      });
+      if (res.data.success) {
+        localStorage.setItem("token", res.data.token);
+
+        toast.success("Login successful!");
+
+        setTimeout(() => {
+          window.location.href =
+            "http://localhost:3005/?msg=login-success";
+        }, 800);
+
+        setFormData({
+          email: "",
+          password: "",
+        });
+      } else {
+        toast.error(res.data.message || "Invalid email or password");
+      }
     } catch (err) {
-      console.log("Error Occurred:", err);
+      console.error(err);
+      toast.error("Server error occurred");
+    } finally {
+      setLoading(false);
     }
   };
-
 
   return (
     <div className="hero-signupForm" style={{ height: "17rem" }}>
@@ -51,29 +60,36 @@ export default function Login({ handleForm }) {
 
       <form onSubmit={handleFormSubmit}>
         <div className="signup-form-inputs">
+
           <TextField
-            id="outlined-basic"
             name="email"
             label="Email"
             variant="outlined"
-            onChange={handleOnChange}
             value={formData.email}
-          />
-          <TextField
-            id="outlined-basic"
-            name="password"
-            label="Password"
-            variant="outlined"
             onChange={handleOnChange}
-            value={formData.password}
           />
 
-          <Button variant="contained" type="submit">
-            SubmitForm
+          <TextField
+            name="password"
+            label="Password"
+            type="password"
+            variant="outlined"
+            value={formData.password}
+            onChange={handleOnChange}
+          />
+
+          <Button
+            variant="contained"
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? "Logging in..." : "Submit Form"}
           </Button>
+
           <ToastContainer position="top-right" autoClose={3000} />
         </div>
       </form>
+
       <div
         style={{
           display: "flex",
@@ -83,16 +99,16 @@ export default function Login({ handleForm }) {
       >
         <p className="smalltext">
           Create an Account?{" "}
-          <a href="#"
+          <span
+            onClick={handleForm}
             style={{
               color: "blue",
               textDecoration: "underline",
               cursor: "pointer",
             }}
-            onClick={handleForm}
           >
             SignUp
-          </a>
+          </span>
         </p>
       </div>
     </div>
