@@ -9,7 +9,7 @@ export default function Login({ handleForm }) {
     email: "",
     password: "",
   });
-
+    const API = process.env.REACT_APP_API_URL;
   const [loading, setLoading] = useState(false);
 
   const handleOnChange = (event) => {
@@ -25,7 +25,7 @@ export default function Login({ handleForm }) {
 
     try {
       const res = await axios.post(
-        "http://localhost:2000/auth/login",
+        `${API}/auth/login`,
         formData
       );
 

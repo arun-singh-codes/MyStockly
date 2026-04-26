@@ -7,12 +7,12 @@ app.use(express.urlencoded({ extended: true }));
 // const bodyParser = require("body-parser");
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
-
+const frontend_API = process.env.FRONTEND_URL;
 const cors = require("cors");
 app.use(cors({
-    origin: ["http://localhost:3000", "http://localhost:3005"], // 👈 yahan frontend ka exact origin likho
+    origin: [frontend_API, "http://localhost:3005"], // 👈 yahan frontend ka exact origin likho
     credentials: true, // 👈 cookies / tokens allow karne ke liye
-  }));
+  }));  
 
 //for .env file
 require("dotenv").config();
@@ -29,14 +29,18 @@ const PositionsModel = require("./model/PositionsModel.js");
 const OrdersModel = require("./model/OrdersModel.js");
 // app.use(express.json());
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-  mongoose.connect(uri);
-  
+mongoose.connect(uri)
+  .then(() => {
     console.log("Database connected");
-  
-  
-});
+
+    app.listen(PORT, () => {
+      console.log(`Server running on ${PORT}`);
+    });
+
+  })
+  .catch((err) => {
+    console.log("DB connection error:", err);
+  });
 
 //Cookie Parser
 const cookieParser = require("cookie-parser");
