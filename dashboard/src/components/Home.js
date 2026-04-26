@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
-    const queryp = new URLSearchParams(location.search);
+    // const queryp = new URLSearchParams(location.search);
     const loginmsg = queryParams.get("msg");
     const signupmsg = queryParams.get("msg");
 
