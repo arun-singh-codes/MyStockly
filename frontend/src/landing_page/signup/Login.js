@@ -10,6 +10,8 @@ export default function Login({ handleForm }) {
     password: "",
   });
     const API = process.env.REACT_APP_API_URL;
+       const Dashboard_url = process.env.REACT_APP_DASHBOARD_URL;
+
   const [loading, setLoading] = useState(false);
 
   const handleOnChange = (event) => {
@@ -36,7 +38,7 @@ export default function Login({ handleForm }) {
 
         setTimeout(() => {
           window.location.href =
-            "http://localhost:3005/?msg=login-success";
+            `${Dashboard_url}/?msg=login-success`;
         }, 800);
 
         setFormData({

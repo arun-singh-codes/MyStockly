@@ -7,6 +7,8 @@ import { ToastContainer, toast } from "react-toastify";
 
 export default function Signup({ handleForm }) {
   const API = process.env.REACT_APP_API_URL;
+    const Dashboard_url = process.env.REACT_APP_DASHBOARD_URL;
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -41,7 +43,7 @@ export default function Signup({ handleForm }) {
 
         setTimeout(() => {
           window.location.href =
-            "http://localhost:3005/?msg=signup-success";
+            `${Dashboard_url}/?msg=signup-success`
         }, 1000);
 
         setFormData({

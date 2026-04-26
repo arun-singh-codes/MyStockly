@@ -8,9 +8,10 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 const frontend_API = process.env.FRONTEND_URL;
+const dashboard_API = process.env.DASHBOARD_URL;
 const cors = require("cors");
 app.use(cors({
-    origin: [frontend_API, "http://localhost:3005"], // 👈 yahan frontend ka exact origin likho
+    origin: [frontend_API, DASHBOARD_URL], // 👈 yahan frontend ka exact origin likho
     credentials: true, // 👈 cookies / tokens allow karne ke liye
   }));  
 
