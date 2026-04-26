@@ -1,0 +1,120 @@
+
+/*About section ..........................................................................................*/
+
+.container{
+  padding-top: 3rem;
+}
+
+.about-page{
+  display: flex;
+  flex-direction: column;
+}
+.hero-heading h2{
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 0.7rem;
+  letter-spacing: 0.02rem;
+}
+.about-hero{
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  flex-direction: column;  
+  align-items: center;
+}
+
+
+.hero-text{
+  display: flex;
+  width: 44.5rem;
+  padding: 3.5rem 11rem 0 5rem;
+  justify-content: space-between;
+}
+.hero-text-container{
+  max-width: 54.3rem;
+  /* padding: 4rem; */
+  
+}
+.hero-para{
+  max-width: 20rem;
+ 
+}
+.hero-para p{
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  
+}
+
+.blue{
+  color: #387ed1;
+}
+
+
+/* Team ...............................................................................................*/
+
+
+.team-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0 5rem;
+  height: 30rem;
+}
+.team-container-items{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45rem;
+  height: 100%;
+  padding-right: 2rem;
+}
+.people-image{
+  border-radius: 50%;
+  width:14.8rem;
+  height: 14.8rem;
+  background-image: url("../assets/images/nithinKamath.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.people-image-container{
+  padding-top: 9rem;
+}
+
+.people-text-container{
+  width: 25.8rem;
+  padding: 1rem;
+  
+}
+
+.people-heading h3{
+  font-size: 1.2rem;
+  font-weight: 500;
+
+}
+
+.people-heading{
+  margin:0 0 3.7rem 0.9rem ;
+}
+.people-text p {
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.025rem;
+}
+.people-text{
+  padding-bottom: 1.2rem;
+}
+.people-image-text{
+  text-align: center;
+}
+.people-image-text h3{
+  font-size: 1rem;
+  font-weight: 500;
+  color:rgb(59, 58, 58)  ;
+}
+
+.people-image-text p{
+  font-size: 0.7rem;
+  font-weight: 500;
+
+}

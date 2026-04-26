@@ -1,0 +1,259 @@
+
+/* homeHero................................................................................................................. */
+
+.HeroContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 3.4rem;
+  /* padding-left: 7.35rem; */
+  min-height: 100vh;
+}
+.Hero {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Hero img {
+  /* width: 39rem; */
+  height: 16.5rem;
+}
+h4 {
+  font-size: 1.47rem;
+  /* font-weight: 540; */
+  font-weight: normal;
+  color: rgb(61, 60, 60);
+  text-align: center;
+  margin-bottom: 0.1rem;
+  line-height: 1.1rem;
+  margin-top: 3.6rem;
+}
+p {
+  color: rgb(61, 60, 60);
+  font-size: 1.07rem;
+}
+
+.button {
+  padding-top: 0.15rem;
+}
+.button button {
+  background-color: #387ed1;
+  color: white;
+  border: none;
+  padding: 0.55rem 1.7rem;
+  font-size: 1.01rem;
+  border-radius: 0.16rem;
+  font-weight: 500;
+}
+
+
+/* Stats......................................................................................... */
+
+
+.statsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 10.6rem 2rem 10.6rem;
+  overflow: hidden;
+}
+.statsContainer h3 {
+  margin-right: auto;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: rgb(52, 51, 51);
+  margin-bottom: 0.24rem;
+}
+.heading {
+  margin-bottom: -0.9rem;
+}
+.content {
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+}
+/* .content-text {
+  /* padding-right: 4rem;
+  width: 20rem;
+  height: fit-content; */
+
+.para {
+  line-height: 2.5rem;
+}
+
+.heading h3 {
+  font-size: 1.05rem;
+  font-weight: 520;
+  color: rgb(52, 51, 51);
+}
+
+.para-para p {
+  font-size: 0.8rem;
+  line-height: 1.4rem;
+  color: rgb(103, 101, 101);
+}
+
+.content-image {
+  width: 30rem;
+  height: 30rem;
+  margin-bottom: 5rem;
+}
+
+.content-image img {
+  width: 30.8rem;
+  height: 30rem;
+}
+
+.explore-button a {
+  text-decoration: none;
+  color: #387ed1;
+  font-size: 0.8rem;
+  font-weight: 520;
+}
+.explore-button {
+  display: flex;
+  justify-content: center;
+}
+.explore-button a i {
+  font-size: 0.5rem;
+  color: #387ed1;
+}
+
+.extra-image img {
+  width: 100%;
+  height: 2rem;
+}
+
+.extra-image {
+  height: 2rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+
+/* pricing.............................................................................................................. */
+
+
+
+
+
+.HomePricingContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-image {
+  display: flex;
+  height: 10rem;
+  padding-right: 1.7rem;
+}
+
+.pricing-text {
+  width: 21rem;
+  margin-right: 1.5rem;
+}
+
+.pt-heading {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgb(33, 32, 32);
+}
+.pt-para {
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+
+.pt-button {
+  font-size: 0.8rem;
+  color: #387ed1;
+}
+
+.zero {
+  width: 6rem;
+  height: 100%;
+}
+.zerodiv {
+  width: 10rem;
+  height: 100%;
+  position: relative;
+}
+.twenty {
+  width: 6rem;
+  height: 100%;
+  padding-left: 2rem;
+}
+.zero-text {
+  position: absolute;
+  top: 54.1%;
+  left: 80%; /*       horizontal center  */
+  transform: translate(-50%, -50%);
+  color: rgb(134, 133, 133);
+  font-size: 0.5rem;
+  width: 6rem;
+}
+
+.twenty-text {
+  position: absolute;
+  top: 50%;
+  left: 92%; /*       horizontal center  */
+  transform: translate(-50%, -50%);
+  color: rgb(134, 133, 133);
+  font-size: 0.5rem;
+  width: 3rem;
+}
+
+.pricing {
+  display: flex;
+}
+
+
+
+/* education ...............................................................................*/
+
+.Education-container {
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1.5rem;
+}
+
+.education-image {
+  width: 21.5rem;
+  height: 16rem;
+}
+
+.education-text {
+  width: 25rem;
+  margin-left: 7.1rem;
+}
+
+.education-heading {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1.3rem;
+}
+.para {
+  line-height: 1.5rem;
+  font-size: 0.8rem;
+  color: rgb(64, 63, 63);
+  word-spacing: 0.11rem;
+}
+.para-btn {
+  font-size: 0.8rem;
+  color: #387ed1;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.para-btn i {
+  font-size: 0.5rem;
+  color: #387ed1;
+}
