@@ -5,7 +5,7 @@ function Navbar() {
       <nav>
         <div className="nav-container">
           <div className="nav-logo">
-            <a href="/" className='nav-logo-link button'><span><i class="fa-solid fa-wallet"></i>&nbsp;</span>MyStockly</a>
+            <Link href="/" className='nav-logo-link button'><span><i class="fa-solid fa-wallet"></i>&nbsp;</span>MyStockly</Link>
           </div>
 
           <div className="nav-links">
